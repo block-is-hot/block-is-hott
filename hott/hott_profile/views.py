@@ -17,7 +17,7 @@ def profile_view(request, username=None):
 
 
 class ProfileEditView(LoginRequiredMixin, UpdateView):
-    template_name = 'shopper_profile/profile_edit.html'
+    template_name = 'hott_profile/profile_edit.html'
     model = HottProfile
     form_class = ProfileEditForm
     login_url = reverse_lazy('auth_login')
@@ -39,7 +39,6 @@ class ProfileEditView(LoginRequiredMixin, UpdateView):
         return kwargs
 
     def form_valid(self, form):
-        # import pdb; pdb.set_trace()
         form.instance.user.email = form.data['email']
         form.instance.user.first_name = form.data['first_name']
         form.instance.user.last_name = form.data['last_name']
