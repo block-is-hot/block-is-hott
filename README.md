@@ -97,3 +97,16 @@ To install the application requirements with pip:
 ./manage.py startapp <app name>
 ```
 
+Then you will want to save all pip installation requirements.
+
+```
+(ENV)$ pip freeze > requirements.txt
+```
+
+**Django Registration**: Install django-registration. It will downgrade you to Django 1.11.13, but you need Django 2.0.5. So you'll need to upgrade it with the next command.
+
+```
+(ENV)$ pip install django-registration
+(ENV)$ pip install -U django
+```
+

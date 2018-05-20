@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import HottProfile
 from .forms import ProfileEditForm
 
@@ -8,16 +8,28 @@ from django.urls import reverse_lazy
 
 
 def profile_view(request, username=None):
-    if not username:
-        username = request.user.get_username()
-        if username == '':
-            return redirect('home')
+    owner = False
 
-    return render(request, 'hott_profile/profile.html')
+    import pdb; pdb.set_trace()
+    if not username:
+        username = request.user.username
+        owner = True
+        if username == '':
+            return redirect('/')
+
+    profile = get_object_or_404(HottProfile, user__username=username)
+
+    if not owner:
+        return redirect('/')
+
+    context = {
+        'profile': profile,
+    }
+    return render(request, 'templates/profile.html', context)
 
 
 class ProfileEditView(LoginRequiredMixin, UpdateView):
-    template_name = 'shopper_profile/profile_edit.html'
+    template_name = 'hott_profile/profile_edit.html'
     model = HottProfile
     form_class = ProfileEditForm
     login_url = reverse_lazy('auth_login')
@@ -39,7 +51,6 @@ class ProfileEditView(LoginRequiredMixin, UpdateView):
         return kwargs
 
     def form_valid(self, form):
-        # import pdb; pdb.set_trace()
         form.instance.user.email = form.data['email']
         form.instance.user.first_name = form.data['first_name']
         form.instance.user.last_name = form.data['last_name']
