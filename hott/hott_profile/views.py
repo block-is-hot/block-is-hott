@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import HottProfile
 from .forms import ProfileEditForm
 
@@ -8,12 +8,24 @@ from django.urls import reverse_lazy
 
 
 def profile_view(request, username=None):
-    if not username:
-        username = request.user.get_username()
-        if username == '':
-            return redirect('home')
+    owner = False
 
-    return render(request, 'hott_profile/profile.html')
+    import pdb; pdb.set_trace()
+    if not username:
+        username = request.user.username
+        owner = True
+        if username == '':
+            return redirect('/')
+
+    profile = get_object_or_404(HottProfile, user__username=username)
+
+    if not owner:
+        return redirect('/')
+
+    context = {
+        'profile': profile,
+    }
+    return render(request, 'templates/profile.html', context)
 
 
 class ProfileEditView(LoginRequiredMixin, UpdateView):
