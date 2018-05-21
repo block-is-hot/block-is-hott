@@ -51,7 +51,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'hott',
-    'hott_profile'
+    'hott_profile',
+    'sass_processor',
 ]
 
 MIDDLEWARE = [
