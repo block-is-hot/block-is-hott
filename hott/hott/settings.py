@@ -51,7 +51,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'hott',
+    'hott_api',
     'hott_profile',
+    'hott_overlays',
     'sass_processor',
 ]
 
