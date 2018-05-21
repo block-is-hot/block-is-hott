@@ -17,7 +17,7 @@
       <ul>
         <li><a href="{% url "home" %}">Home</a></li>
         {% if user.is_authenticated %}
-        <li><a href="{% url "profile" %}">Profile</a></li>
+        <li><a href="{% url "profile" %}">{{ user.username }}</a></li>
         <li><a href="">Maps</a></li>
         {% if user.is_superuser %}
         <li><a href="{% url "admin:index" %}">Admin</a></li>
@@ -31,9 +31,6 @@
     </nav>
     <section class="sec1"></section>
     <section class="sec2"></section>
-    {% if user.is_authenticated %}
-    <h3>Welcome to the site {{ user.username }}</h3>
-    {% endif %}
   </header>
   <main>
     {% block content %}
