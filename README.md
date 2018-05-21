@@ -110,3 +110,12 @@ Then you will want to save all pip installation requirements.
 (ENV)$ pip install -U django
 ```
 
+# SCSS
+
+Here, we made scss files by first playing an underscore before the name, then putting .scss after it like this: [`_base.scss`]. In the main scss, we imported each of the scss files by saying [`@import "base"`]. Then we compile the scss files with this command:
+
+```
+(ENV)$ pip install libsass django-compressor django-sass-processor
+(ENV)$ ./manage.py compilescss
+```
+

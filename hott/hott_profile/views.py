@@ -12,7 +12,7 @@ def profile_view(request, username=None):
 
     import pdb; pdb.set_trace()
     if not username:
-        username = request.user.username
+        username = request.user.get_username()
         owner = True
         if username == '':
             return redirect('/')
