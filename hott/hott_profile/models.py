@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.dispatch import receiver
+from rest_framework.authtoken.models import Token
 
 
 class ActiveHottProfileManager(models.Manager):
@@ -15,11 +16,8 @@ class ActiveHottProfileManager(models.Manager):
 class HottProfile(models.Model):
     user = models.OneToOneField(
         User, on_delete=models.CASCADE, related_name='profile')
-    street = models.CharField(max_length=1024, null=True, blank=True)
-    city = models.CharField(max_length=1024, null=True, blank=True)
-    state = models.CharField(max_length=2, null=True, blank=True)
-    zip_code = models.CharField(max_length=12, null=True, blank=True)
-    phone_number = models.CharField(max_length=20, null=True, blank=True)
+    latitude = models.FloatField(null=True)
+    longitutde = models.FloatField(null=True)
 
     @property
     def is_active(self):
@@ -36,6 +34,6 @@ class HottProfile(models.Model):
 @receiver(models.signals.post_save, sender=User)
 def create_profile(sender, **kwargs):
     if kwargs['created']:
+        Token.objects.create(user=kwargs['instance'])
         profile = HottProfile(user=kwargs['instance'])
         profile.save()
-        

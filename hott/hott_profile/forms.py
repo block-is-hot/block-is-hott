@@ -21,11 +21,7 @@ class ProfileEditForm(ModelForm):
         fields = ['first_name',
                   'last_name',
                   'email',
-                  'street',
-                  'city',
-                  'state',
-                  'zip_code',
-                  'phone_number']
+                  ]
 
     def __init__(self, *args, **kwargs):
         username = kwargs.pop('username')
