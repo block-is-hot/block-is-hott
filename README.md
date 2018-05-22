@@ -119,3 +119,9 @@ Here, we made scss files by first playing an underscore before the name, then pu
 (ENV)$ ./manage.py compilescss
 ```
 
+To check how everything looks, run the server.
+
+```
+(ENV)$ ./manage.py runserver
+```
+
