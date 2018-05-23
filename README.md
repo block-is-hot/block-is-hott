@@ -119,7 +119,17 @@ Here, we made scss files by first playing an underscore before the name, then pu
 (ENV)$ ./manage.py compilescss
 ```
 
-To check how everything looks, run the server.
+
+**React**
+
+First, create an app.
+
+```
+npx create-react-app <your app>
+
+```
+npm install sass-loader node-sass --save-dev
+```
 
 ```
 (ENV)$ ./manage.py runserver
