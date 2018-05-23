@@ -27,3 +27,45 @@ class Entertainment(models.Model):
         """Show a string representation of the entertainment."""
         return 'Cultural space of {} at {}'.format(
             self.description, self.location)
+
+
+class Events(models.Model):
+    """Model to store the events."""
+
+    latitude = models.FloatField(null=True)
+    longitude = models.FloatField(null=True)
+    description = models.CharField(
+        max_length=180, default='DEFAULT', null=True)
+
+    def __str__(self):
+        """Show a string representation of the event."""
+        return 'Event of {} at {} and {}'.format(
+            self.description, self.latitude, self.longitude)
+
+
+class Art(models.Model):
+    """Model to store the Art."""
+
+    latitude = models.FloatField(null=True)
+    longitude = models.FloatField(null=True)
+    description = models.CharField(
+        max_length=180, default='DEFAULT', null=True)
+
+    def __str__(self):
+        """Show a string representation of the event."""
+        return 'Art of {} at {} and {}'.format(
+            self.description, self.latitude, self.longitude)
+
+
+class Dirtiness(models.Model):
+    """Model to store the Dirtiness."""
+
+    latitude = models.FloatField(null=True)
+    longitude = models.FloatField(null=True)
+    description = models.CharField(
+        max_length=180, default='DEFAULT', null=True)
+
+    def __str__(self):
+        """Show a string representation of the event."""
+        return 'Dirtiness of {} at {} and {}'.format(
+            self.description, self.latitude, self.longitude)
