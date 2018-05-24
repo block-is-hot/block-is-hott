@@ -25,4 +25,4 @@ def profile_view(request, username=None):
     context = {
         'profile': profile,
     }
-    return render(request, 'templates/profile.html', context)
+    return render(request, 'templates/home.html', context)
