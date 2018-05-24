@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from rest_framework import generics, status
 from rest_framework.views import APIView
 from ipywidgets.embed import embed_minimal_html
+from traitlets.traitlets import TraitError
 from hott_overlays.models import Crimes, Entertainment, Events, Art, Dirtiness
 import gmaps
 import os
@@ -46,7 +47,10 @@ class CrimeMap(APIView):
             temp.append(each.longitude)
             locations.append(temp)
 
-        heatmap_layer = gmaps.heatmap_layer(locations)
+        try:
+            heatmap_layer = gmaps.heatmap_layer(locations)
+        except TraitError:
+            heatmap_layer = gmaps.heatmap_layer([[47.465568160532435, -122.50131030799446]])
 
         heatmap_layer.gradient = [
             (0, 0, 0, 0.7),
@@ -87,7 +91,10 @@ class EntertainmentMap(APIView):
             except IndexError:
                 pass
 
-        heatmap_layer = gmaps.heatmap_layer(locations)
+        try:
+            heatmap_layer = gmaps.heatmap_layer(locations)
+        except TraitError:
+            heatmap_layer = gmaps.heatmap_layer([[47.465568160532435, -122.50131030799446]])
 
         heatmap_layer.gradient = [
             (0, 0, 0, 0.7),
@@ -123,7 +130,10 @@ class EventMap(APIView):
                 temp.append(each.longitude)
                 locations.append(temp)
 
-        heatmap_layer = gmaps.heatmap_layer(locations)
+        try:
+            heatmap_layer = gmaps.heatmap_layer(locations)
+        except TraitError:
+            heatmap_layer = gmaps.heatmap_layer([[47.465568160532435, -122.50131030799446]])
 
         heatmap_layer.gradient = [
             (0, 0, 0, 0.7),
@@ -159,7 +169,10 @@ class ArtMap(APIView):
                 temp.append(each.longitude)
                 locations.append(temp)
 
-        heatmap_layer = gmaps.heatmap_layer(locations)
+        try:
+            heatmap_layer = gmaps.heatmap_layer(locations)
+        except TraitError:
+            heatmap_layer = gmaps.heatmap_layer([[47.465568160532435, -122.50131030799446]])
 
         heatmap_layer.gradient = [
             (0, 0, 0, 0.7),
@@ -195,7 +208,10 @@ class DirtinessMap(APIView):
                 temp.append(each.longitude)
                 locations.append(temp)
 
-        heatmap_layer = gmaps.heatmap_layer(locations)
+        try:
+            heatmap_layer = gmaps.heatmap_layer(locations)
+        except TraitError:
+            heatmap_layer = gmaps.heatmap_layer([[47.465568160532435, -122.50131030799446]])
 
         heatmap_layer.gradient = [
             (0, 0, 0, 0.7),
