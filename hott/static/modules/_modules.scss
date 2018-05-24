@@ -1,0 +1,46 @@
+.about-us {
+    margin: auto;
+    // display: inline-block;
+    width: 95%;
+}
+
+.about-us-header {
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+#dev-container {
+    display: inline-grid;
+    grid-template-columns: 300px 300px 300px;
+    grid-gap: 15px;
+    background-color: rgb(66, 66, 66);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-left: 10%;
+}
+
+.dev-div {
+    height: 300px;
+}
+
+.dev-div img{
+    width:100%;
+    max-height: 250px;
+    text-align: center;
+    margin: auto;
+}
+
+.dev-div h3 {
+    text-align: center;
+    margin: auto;
+    width: 100%
+}
+
+.dev-div p {
+    text-align: center;
+    margin: auto;
+    width: 100%
+}

@@ -828,7 +828,6 @@ body {
   background-color: #888888;
   color: black;
   padding: 20px;
-  font-family: Garamond, times, serif;
   border: 0px; }
 
 section {
@@ -885,10 +884,13 @@ ul {
   color: white;
   font-size: 18px; }
 
-#ballard {
-  width: 98%;
-  margin: 27px 0;
-  border-top: 5px solid #ac2f1e; }
+.dev-pic {
+  max-width: 200px;
+  margin: 20px; }
+
+#block-content {
+  width: 95%;
+  margin: auto; }
 
 main {
   width: 90%; }
@@ -947,6 +949,72 @@ nav ul li a:hover:before {
   transform-origin: left;
   transform: scaleX(1); }
 
+.about-us {
+  margin: auto;
+  width: 95%; }
+
+.about-us-header {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto 5px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 30px;
+  background: -webkit-linear-gradient(#ff8501, #ff2e20);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; }
+
+#dev-container {
+  display: inline-grid;
+  grid-template-columns: 300px 300px 300px;
+  grid-gap: 15px;
+  background-color: #424242;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-left: 12%; }
+
+.dev-div {
+  height: 350px;
+  max-width: 275px; }
+
+.dev-div img {
+  width: 100%;
+  max-height: 250px;
+  text-align: center;
+  margin-left: 35px; }
+
+.dev-div h3 {
+  text-align: center;
+  margin: auto;
+  width: 100%; }
+
+.dev-div p {
+  text-align: center;
+  margin: auto;
+  width: 100%; }
+
+.shannon {
+  margin: 3px 0 0 38px; }
+
+.gene {
+  margin-left: 25px; }
+
+.jeremy {
+  margin-left: 15px; }
+
+.dev-shannon {
+  margin-top: 12px;
+  padding-top: 8px; }
+
+.dev-gene {
+  margin-top: 0px; }
+
+.dev-jeremy {
+  margin-top: 2px;
+  padding-top: 3px; }
+
+/*# sourceMappingURL=../../../../../../../../../../static/_main.css.map */
+
 .drop-down ul {
   list-style: none;
   position: relative;
@@ -987,3 +1055,4 @@ nav ul li a:hover:before {
   text-shadow: none; }
 
 /*# sourceMappingURL=../../../../../../../../../static/_main.css.map */
+

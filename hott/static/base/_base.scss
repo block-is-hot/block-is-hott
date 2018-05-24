@@ -5,7 +5,6 @@
     background-color: rgb(136, 136, 136);
     color: black;
     padding: 20px;
-    font-family: Garamond, times, serif;
     border: 0px;
   }
   
@@ -29,7 +28,7 @@
     font-weight: bold;
     font-family: 'Share Tech Mono', monospace;
     padding: 0px;
-    margin: -95px 0 0 100px;
+    margin: -95px 0 0 95px;
     text-shadow: 2px 2px 5px #111111;
     border: 0px;
   }
@@ -46,14 +45,18 @@
   .menu {
      display: inline;
      padding: 0 30px;
-     margin: -20px, 0;
-     font: times;
+     margin: -20px, 0, 10px;
      text-shadow: -1px -1px 0px #000000;
+  }
+
+  .link {
+      text-decoration: None;
+      color: white;
+      margin-bottom: 5px;
   }
   
   #nav-bar {
     width: 90%;
-    font: times;
     padding: 0px 15px 10px;
     margin: -40px 0px 0px 0px;
     font-size: 20px;
@@ -68,8 +71,12 @@
     font-size: 18px;
   }
   
-  #ballard {
-      width: 98%;
-      margin: 27px 0;
-      border-top: 5px solid rgb(172, 47, 30);
+  .dev-pic {
+      max-width: 200px;
+      margin: 20px;
+  }
+
+  #block-content {
+      width: 95%;
+      margin: auto;
   }
