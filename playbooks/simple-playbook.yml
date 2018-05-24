@@ -22,14 +22,14 @@
 
 
     - name: Clone the project
-      git: clone=yes repo=https://github.com/jeremyctown/block-is-hott.git dest=/home/ubuntu/block-is-hott
+      git: clone=yes repo=https://github.com/block-is-hot/block-is-hott.git dest=/home/ubuntu/block-is-hott
 
 
     - name: Create a virtual ENV for project to run in
       command: python3 -m venv /home/ubuntu/block-is-hott/ENV
       become: yes
       become_method: sudo
-
+      
     
     - name: Install hotblock requirements to virtual environment
       pip: 
