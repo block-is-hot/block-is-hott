@@ -44,7 +44,7 @@
   
   .menu {
      display: inline;
-     padding: 0 30px;
+     padding: 0 12px;
      margin: -20px, 0, 10px;
      text-shadow: -1px -1px 0px #000000;
   }
@@ -79,4 +79,7 @@
   #block-content {
       width: 95%;
       margin: auto;
+
+  main {
+    width: 90%;
   }
