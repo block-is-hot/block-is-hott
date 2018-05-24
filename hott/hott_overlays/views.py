@@ -8,6 +8,30 @@ class CrimeView(TemplateView):
     """Class view for library."""
 
     template_name = 'crime.html'
+
+
+class ArtView(TemplateView):
+    """Class view for library."""
+
+    template_name = 'art.html'
+
+
+class EventView(TemplateView):
+    """Class view for library."""
+
+    template_name = 'events.html'
+
+
+class EntertainmentView(TemplateView):
+    """Class view for library."""
+
+    template_name = 'entertainment.html'
+
+
+class DirtinessView(TemplateView):
+    """Class view for library."""
+
+    template_name = 'dirtiness.html'
     # context_object_name = 'crime'
     # login_url = reverse_lazy('auth_login')
 
