@@ -29,7 +29,7 @@
       command: python3 -m venv /home/ubuntu/block-is-hott/ENV
       become: yes
       become_method: sudo
-      
+
     
     - name: Install hotblock requirements to virtual environment
       pip: 
@@ -43,6 +43,13 @@
       pip: virtualenv=/home/ubuntu/block-is-hott/ENV name=gunicorn
       become: yes
       become_method: sudo
+
+      
+    - name: Collect static css files
+      django_manage:
+        command: collectstatic
+        app_path: /home/ubuntu/django-imager/imagersite
+        virtualenv: /home/ubuntu/ENV
 
 
     - name: Register the backup default config for Nginx
@@ -79,6 +86,7 @@
       command: systemctl enable gunicorn
       become: yes
       become_method: sudo
+
 
     - name: Setup Nginx
       command: systemctl enable nginx 
