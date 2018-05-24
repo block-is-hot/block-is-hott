@@ -1,6 +1,5 @@
 from django.views.generic import TemplateView
 
 
-class HomeView(TemplateView):
-    template_name = 'generic/home.html'
-
+# class HomeView(TemplateView):
+#     template_name = 'generic/home.html'
