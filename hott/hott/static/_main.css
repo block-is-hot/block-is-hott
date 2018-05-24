@@ -862,7 +862,7 @@ ul {
 
 .menu {
   display: inline;
-  padding: 0 30px;
+  padding: 0 12px;
   margin: -20px, 0, 10px;
   text-shadow: -1px -1px 0px #000000; }
 
@@ -889,6 +889,9 @@ ul {
   width: 98%;
   margin: 27px 0;
   border-top: 5px solid #ac2f1e; }
+
+main {
+  width: 90%; }
 
 .sec1 {
   width: 100%;
