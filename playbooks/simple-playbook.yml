@@ -44,11 +44,11 @@
       become: yes
       become_method: sudo
 
-      
+
     - name: Collect static css files
       django_manage:
         command: collectstatic
-        app_path: /home/ubuntu/django-imager/imagersite
+        app_path: /home/ubuntu/block-is-hott/hott
         virtualenv: /home/ubuntu/ENV
 
 
