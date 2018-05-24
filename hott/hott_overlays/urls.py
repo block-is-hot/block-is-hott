@@ -1,17 +1,18 @@
-from django.shortcuts import render
+# from django.shortcuts import render
 from django.urls import path
-from .views import CrimeView
-
+# from .views import CrimeView, EntertainmentView, EventView, ArtView, DirtinessView
+from django.views.generic import TemplateView
 
 
 urlpatterns = [
-    path('crime/', CrimeView.as_view(), name='crime'),
-    # path('photos/', PhotosView.as_view(), name='photos'),
-    # path('photos/<int:pk>', PhotoView.as_view(), name='photo'),
-    # path('photos/<int:pk>/edit', PhotoEditView.as_view(), name='photo_edit'),
-    # path('albums/', AlbumsView.as_view(), name='albums'),
-    # path('albums/<int:pk>', AlbumView.as_view(), name='album'),
-    # path('albums/<int:pk>/edit', AlbumEditView.as_view(), name='album_edit'),
-    # path('photos/add', PhotoCreateView.as_view(), name='photo_create'),
-    # path('albums/add', AlbumCreateView.as_view(), name='album_create')
+    # path('crime/', CrimeView.as_view(), name='crimemap'),
+    # path('entertainment/', EntertainmentView.as_view(), name='entertainmentmap'),
+    # path('events/', EventView.as_view(), name='eventsmap'),
+    # path('art/', ArtView.as_view(), name='artmap'),
+    # path('complaints/', DirtinessView.as_view(), name='dirtinessmap'),
+    path('crime/', TemplateView.as_view(template_name="crime.html"), name='crimemap'),
+    path('entertainment/', TemplateView.as_view(template_name="entertainment.html"), name='entertainmentmap'),
+    path('events/', TemplateView.as_view(template_name="events.html"), name='eventsmap'),
+    path('art/', TemplateView.as_view(template_name="art.html"), name='artmap'),
+    path('complaints/', TemplateView.as_view(template_name="dirtiness.html"), name='dirtinessmap'),
 ]
