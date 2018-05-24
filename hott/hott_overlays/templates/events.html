@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>IPyWidget export</title>
-</head>
-<body>
+{% extends 'generic/base.html' %}
 
+{% block content %}
 
-<!-- Load require.js. Delete this if your page already loads require.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.12.0/dist/embed-amd.js" crossorigin="anonymous"></script>
 
@@ -185833,5 +185827,5 @@
 {"version_major": 2, "version_minor": 0, "model_id": "995ab34451544f7cb572becaa25460fc"}
 </script>
 
-</body>
-</html>
+
+{% endblock content %}
