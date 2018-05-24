@@ -20,12 +20,12 @@
           <li class="menu spacer"><a class="menu link"href="{% url "home" %}">Home</a></li>
           <li class="menu spacer"><a class="menu link" href="">Maps</a>
             <ul>
-              <li><a href="#">Crime</a></li>
-              <li><a href="#">Entertainment</a></li>
-              <li><a href="#">Events</a></li>
+              <li><a href="{% url "crimemap" %}">Crime</a></li>
+              <li><a href="{% url "entertainmentmap" %}">Entertainment</a></li>
+              <li><a href="{% url "dirtinessmap" %}">Complaints</a></li>
               {% if user.is_authenticated %}
-              <li><a href="#">Beer</a></li>
-              <li><a href="#">Events</a></li>
+              <li><a href="{% url "artmap" %}">Art</a></li>
+              <li><a href="{% url "eventsmap" %}">Events</a></li>
             </ul>
           </li>
           {% if user.is_superuser %}
