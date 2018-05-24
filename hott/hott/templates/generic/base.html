@@ -13,41 +13,43 @@
   </head>
 
   <body>
-    <div id="header-bar" class="drop-down">
-      <img src="{% static "hotblock_logo.jpg" %}" id= "hotblock_logo" alt= "The block is hott" />
-      <h1 id= "home">hotBlock</h1>
-        <ul id="nav-bar">
-          <li class="menu spacer"><a class="menu link"href="{% url "home" %}">Home</a></li>
-          <li class="menu spacer"><a class="menu link" href="">Maps</a>
-            <ul>
-              <li><a href="{% url "crimemap" %}">Crime</a></li>
-              <li><a href="{% url "entertainmentmap" %}">Entertainment</a></li>
-              <li><a href="{% url "dirtinessmap" %}">Complaints</a></li>
-              {% if user.is_authenticated %}
-              <li><a href="{% url "artmap" %}">Art</a></li>
-              <li><a href="{% url "eventsmap" %}">Events</a></li>
+    <div class='big'>
+      <div id="header-bar" class="drop-down">
+        <img src="{% static "hotblock_logo.jpg" %}" id= "hotblock_logo" alt= "The block is hott" />
+        <h1 id= "home">hotBlock</h1>
+          <ul id="nav-bar">
+            <li class="menu spacer"><a class="menu link"href="{% url "home" %}">Home</a></li>
+            <li class="menu spacer"><a class="menu link" href="">Maps</a>
+              <ul>
+                <li><a href="{% url "crimemap" %}">Crime</a></li>
+                <li><a href="{% url "entertainmentmap" %}">Entertainment</a></li>
+                <li><a href="{% url "dirtinessmap" %}">Complaints</a></li>
+                {% if user.is_authenticated %}
+                <li><a href="{% url "artmap" %}">Art</a></li>
+                <li><a href="{% url "eventsmap" %}">Events</a></li>
+              </ul>
+            </li>
+            {% if user.is_superuser %}
+            <li class="menu spacer"><a class="menu link" href="{% url "admin:index" %}">Admin</a></li>
+            {% endif %}
+            <li class="menu spacer"><a class="menu link" href="{% url "auth_logout" %}">Logout</a></li>
+            {% else %}
             </ul>
           </li>
-          {% if user.is_superuser %}
-          <li class="menu spacer"><a class="menu link" href="{% url "admin:index" %}">Admin</a></li>
-          {% endif %}
-          <li class="menu spacer"><a class="menu link" href="{% url "auth_logout" %}">Logout</a></li>
-          {% else %}
+            <li class="menu spacer"><a class="menu link" href="{% url "registration_register" %}">Signup</a></li>
+            <li class="menu spacer"><a class="menu link" href="{% url "auth_login" %}">Signin</a></li>
+            {% endif %}
+            <li class="menu spacer"><a class="menu link" href="www.yourmom.com">About Us</a></li>
           </ul>
-        </li>
-          <li class="menu spacer"><a class="menu link" href="{% url "registration_register" %}">Signup</a></li>
-          <li class="menu spacer"><a class="menu link" href="{% url "auth_login" %}">Signin</a></li>
-          {% endif %}
-          <li class="menu spacer"><a class="menu link" href="www.yourmom.com">About Us</a></li>
-        </ul>
-    </div>
-  <main>
-    {% block content %}
-    <h3>No Content</h3>
-    {% endblock content%}
-  </main>
-  <footer>
+      </div>
+    <main id="block-content">
+      {% block content %}
+      <h3>No Content</h3>
+      {% endblock content%}
+    </main>
+    <footer>
 
-  </footer>
+    </footer>
+  </div>
 </body>
 </html>

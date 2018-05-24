@@ -1,12 +1,12 @@
 
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:700|Share+Tech+Mono" rel="stylesheet');
 
-  body {
+  .big {
     background-color: rgb(136, 136, 136);
     color: black;
     padding: 20px;
-    font-family: Garamond, times, serif;
     border: 0px;
+    height: 1000px;
   }
   
   section {
@@ -45,7 +45,7 @@
   
   .menu {
      display: inline;
-     padding: 0 30px;
+     padding: 0 12px;
      margin: -20px, 0, 10px;
      text-shadow: -1px -1px 0px #000000;
   }
@@ -72,8 +72,16 @@
     font-size: 18px;
   }
   
-  #ballard {
-      width: 98%;
-      margin: 27px 0;
-      border-top: 5px solid rgb(172, 47, 30);
+  .dev-pic {
+      max-width: 200px;
+      margin: 20px;
+  }
+
+  #block-content {
+      width: 95%;
+      margin: auto;
+  }
+
+  main {
+    width: 90%;
   }

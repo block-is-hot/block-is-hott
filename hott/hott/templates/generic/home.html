@@ -2,6 +2,25 @@
 {% extends 'generic/base.html' %}
 
 {% block content %}
-<h2>Welcome to the home page!</h2>
-<p>{{ message }}</p>
+<div class="about-us">
+    <h2 class="about-us-header">The Block is Hott</h2>
+    <div id="dev-container">
+        <div class="dev-div shannon">
+            <img class="dev-pic" src="static/shannon.png" alt= "Shannon"/>
+            <h3 class="dev-name dev-shannon">Shannon Tully</h3>
+            <p class="dev-bio">VP of Engineering</p>
+        </div>
+        <div class="dev-div gene">
+            <img class="dev-pic gene-pic" src="static/gene.png" alt= "Gene"/>
+            <h3 class="dev-name dev-gene">Gene Pieterson</h3>
+            <p class="dev-bio">VP of Design</p>
+        </div>
+        <div class="dev-div jeremy">
+            <img class="dev-pic" src="static/jeremy.png" alt= "Jeremy"/>
+            <h3 class="dev-name dev-jeremy">Jeremy Crawford</h3>
+            <p class="dev-bio">VP of Product</p>
+        </div>
+    </div>
+</div>
+
 {% endblock %}
