@@ -45,13 +45,6 @@
       become_method: sudo
 
 
-    - name: Collect static css files
-      django_manage:
-        command: collectstatic
-        app_path: /home/ubuntu/block-is-hott/hott
-        virtualenv: /home/ubuntu/ENV
-
-
     - name: Register the backup default config for Nginx
       stat: path=/etc/nginx/sites-available/default.bak
       register: default_stat
