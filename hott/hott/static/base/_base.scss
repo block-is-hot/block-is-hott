@@ -1,0 +1,95 @@
+
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:700|Share+Tech+Mono" rel="stylesheet');
+
+  .big {
+    background-color: rgb(136, 136, 136);
+    color: black;
+    padding: 20px;
+    border: 0px;
+    height: 1000px;
+    box-sizing:border-box;
+  }
+  
+  section {
+    width: 100%;
+  }
+
+  #header-bar {
+    position: relative;
+    width:95%;
+    margin: auto;
+    height: 20.5vw;
+    overflow: hidden;
+  }
+
+  #header-bar img{
+    display: absolute;
+    width: 100%;
+  }
+
+  #header-bar h1 {
+    position: absolute;
+    bottom: 0.5vw;
+    left: 7vw;
+    color: #ff9913;
+    font-size: 80px;
+    font-weight: bold;
+    font-family: 'Share Tech Mono', monospace;
+    margin-bottom: 0;
+    text-shadow: 2px 2px 5px #111111;
+    border: 0px;
+}
+  
+  ul {
+    width: 650px;
+    font: arial;
+    padding: 0px 15px;
+    margin: 0px 0px 0px 20px;
+    font-size: 20px;
+    border: 0px;
+  }
+  
+  .menu {
+     display: inline;
+     padding: 0 12px;
+     margin: -20px, 0, 10px;
+     text-shadow: -1px -1px 0px #000000;
+  }
+
+  .link {
+      text-decoration: None;
+      color: white;
+      margin-bottom: 5px;
+  }
+  
+  #nav-bar {
+    position: absolute;
+    bottom: 1.5vw;
+    left: 0;
+    width: 90%;
+    font-size: 20px;
+    border: 0px;
+    text-align: right;
+  }
+  
+  #nav-channels{
+    text-decoration: none;
+    font-family: 'IBM Plex Mono', monospace;
+    color: white;
+    font-size: 18px;
+  }
+  
+  .dev-pic {
+      max-width: 200px;
+      margin: 20px;
+  }
+
+  #block-content {
+      width: 95%;
+      margin: auto;
+      overflow: hidden;
+  }
+  
+  main {
+    width: 90%;
+  }

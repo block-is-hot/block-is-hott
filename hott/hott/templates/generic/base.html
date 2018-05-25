@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+{% load static %}
+{% load sass_tags %}
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="{% sass_src '_main.scss' %}" rel="stylesheet" type="text/css" />
+    <title>hotBlock</title>
+  </head>
+
+  <body>
+    <div class='big'>
+      <div id="header-bar" class="drop-down">
+        <img src="{% static "hotblock_logo.jpg" %}" id= "hotblock_logo" alt= "The block is hott" />
+        <h1 id= "home">hotBlock</h1>
+          <ul id="nav-bar">
+            <li class="menu spacer"><a class="menu link"href="{% url "home" %}">Home</a></li>
+            <li class="menu spacer"><a class="menu link" href="">Maps</a>
+              <ul id="user-dd">
+                <li><a href="{% url "crimemap" %}">Crime</a></li>
+                <li><a href="{% url "entertainmentmap" %}">Entertainment</a></li>
+                <li><a href="{% url "dirtinessmap" %}">Complaints</a></li>
+                {% if user.is_authenticated %}
+                <li><a href="{% url "artmap" %}">Art</a></li>
+                <li><a href="{% url "eventsmap" %}">Events</a></li>
+              </ul>
+            </li>
+            {% if user.is_superuser %}
+            <li class="menu spacer"><a class="menu link" href="{% url "admin:index" %}">Admin</a></li>
+            {% endif %}
+            <li class="menu spacer"><a class="menu link" href="{% url "auth_logout" %}">Logout</a></li>
+            {% else %}
+            </ul>
+          </li>
+            <li class="menu spacer"><a class="menu link" href="{% url "registration_register" %}">Signup</a></li>
+            <li class="menu spacer"><a class="menu link" href="{% url "auth_login" %}">Signin</a></li>
+            {% endif %}
+            <li class="menu spacer"><a class="menu link" href="www.yourmom.com">About Us</a></li>
+          </ul>
+      </div>
+    <main id="block-content">
+      {% block content %}
+      <h3>No Content</h3>
+      {% endblock content%}
+    </main>
+    <footer>
+
+    </footer>
+  </div>
+</body>
+</html>
