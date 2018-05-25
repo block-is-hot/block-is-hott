@@ -29,7 +29,7 @@
       command: python3 -m venv /home/ubuntu/block-is-hott/ENV
       become: yes
       become_method: sudo
-      
+
     
     - name: Install hotblock requirements to virtual environment
       pip: 
@@ -79,6 +79,7 @@
       command: systemctl enable gunicorn
       become: yes
       become_method: sudo
+
 
     - name: Setup Nginx
       command: systemctl enable nginx 

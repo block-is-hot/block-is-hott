@@ -7,6 +7,7 @@
     padding: 20px;
     border: 0px;
     height: 1000px;
+    box-sizing:border-box;
   }
   
   section {
@@ -14,25 +15,30 @@
   }
 
   #header-bar {
-      width:95%;
-      margin: auto;
+    position: relative;
+    width:95%;
+    margin: auto;
+    height: 20.5vw;
+    overflow: hidden;
   }
 
   #header-bar img{
-      display: absolute;
-      width: 100%;
+    display: absolute;
+    width: 100%;
   }
 
   #header-bar h1 {
-    color:  rgb(255, 153, 19);
+    position: absolute;
+    bottom: 0.5vw;
+    left: 7vw;
+    color: #ff9913;
     font-size: 80px;
     font-weight: bold;
     font-family: 'Share Tech Mono', monospace;
-    padding: 0px;
-    margin: -95px 0 0 95px;
+    margin-bottom: 0;
     text-shadow: 2px 2px 5px #111111;
     border: 0px;
-  }
+}
   
   ul {
     width: 650px;
@@ -57,9 +63,10 @@
   }
   
   #nav-bar {
+    position: absolute;
+    bottom: 1.5vw;
+    left: 0;
     width: 90%;
-    padding: 0px 15px 10px;
-    margin: -40px 0px 0px 0px;
     font-size: 20px;
     border: 0px;
     text-align: right;
@@ -80,6 +87,7 @@
   #block-content {
       width: 95%;
       margin: auto;
+      overflow: hidden;
   }
   
   main {
